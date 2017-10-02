@@ -1,18 +1,17 @@
-# Bind, Call, Apply Lab
-
-## Objectives
-+ Use JavaScript's bind, call, and apply methods to change function's scope
-
-
 ## Instructions
 
-In this lab, our *tests* define functions that are then passed through to functions we ask you to write.  You're functions should not only invoke the functions passed as arguments, but also modify the `this` value of the functions passed through.   
+In this lab, you will creating a form that adds Scuber employees.  It also allows us to clear the list of employees upon a click to the "Clear Employee List" link.  We will build up to this functionality with small functions, so read the tests carefully.
 
-We ask you to write the following functions:
+You will find your tests underneath the HTML after you run `learn-test`.  We'll be testing against this with the `index.html` document, but you should still write your code in `index.js`.  Write the following functions:
 
-  + `justInvoke(fn)`: The function simply invokes the function passed through to it.  It also returns the return value of the passed through function.  
-  + `setThisWithCall(fn, thisValue)`: The function again invokes the function passed to it, but uses the `call` method to return the function's this value.
-  + `setThisWithApply(fn, thisValue, args)`: Again, invoke the function passed to it, change the `this` value of that function passed to it.  In addition, we ask you to invoked the passed function with arguments.  You should accomplish all of the above by using `apply`.
-  + `returnNewFunctionOf(functionToBeCopied, thisValue)`: Here, we ask you to write a function that returns a copy of the function passed through, but sets the `this` value of the function's copy.
++ `retrieveEmployeeInformation()`: This retrieves the employee information from the input.  It returns a string equal to the value in the input.
++ `addNewElementAsLi()`: This function takes the value retrieved from the previous `retrieveEmployeeInformation` function and adds that string to a new list element which is appended to the `ul` with class "employee-list".
++ `addNewLiOnClick()`: This retrieves the employee information from the input.
++ `retrieveEmployeeInformation()`: This retrieves the employee information from the input.
++ `retrieveEmployeeInformation()`: This retrieves the employee information from the input.
 
-<p class='util--hide'>View <a href='https://learn.co/lessons/js-object-oriented-bind-call-apply-lab'>Javascript Bind, Call and Apply Lab</a> on Learn.co and start learning to code for free.</p>
+Have fun, and good luck!
+
+## Resources
+
+- [addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)

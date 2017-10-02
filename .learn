@@ -2,10 +2,9 @@ tags:
   - learn.co
   - flatiron school
   - javascript
-  - bind
-  - call
-  - apply
+  - events
+  - event listeners
 languages:
   - javascript
 resources:
-  - 3
+  - 1

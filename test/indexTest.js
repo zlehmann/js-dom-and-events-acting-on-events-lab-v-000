@@ -1,57 +1,59 @@
 const expect = chai.expect;
 
-describe('global functions', function() {
-  let returnsThis;
-  let bob;
-
-  beforeEach(function(){
-     returnsThis = function(){ return this}
-     bob = {name: 'bob'}
-  })
-
-  describe('invokeFunction', function(){
-    it('calls and returns the function as a callback, that shows that this is global from the callack', function(){
-      expect(justInvoke(returnsThis)).to.equal(window)
+describe('index', () => {
+  describe('retrieveEmployeeInformation()', () => {
+    it('retrieves the employee information from the input', () => {
+      document.querySelector('input').value = 'Bob'
+      expect(retrieveEmployeeInformation()).to.equal('Bob')
     })
   })
 
-  describe('setThisWithCall', function(){
-    it('calls and returns the function as a callback, and assigns this to be bob', function(){
-      expect(setThisWithCall(returnsThis, bob)).to.equal(bob)
+  describe('addNewElementAsLi()', () => {
+    it('adds an li element with the text as the value of the input', () => {
+      expect(document.querySelector('ul').innerHTML).to.not.include('Bob')
+      document.querySelector('input').value = 'Bob'
+      addNewElementAsLi()
+      expect(document.querySelector('.employee-list').innerHTML).to.include('Bob')
     })
   })
 
-  describe('setThisWithApply', function(){
-    it('calls and returns the function as a callback, and assigns this to be bob', function(){
-      expect(setThisWithApply(returnsThis, bob)).to.equal(bob)
+  describe('addNewLiOnClick()', () => {
+    it('adds the employee name as an li element on click', () => {
+
+      let submit = document.querySelector('input[type="submit"]')
+      let event = new MouseEvent('click', {
+        'view': window,
+        'bubbles': true,
+        'cancelable': true
+      });
+      document.querySelector('input').value = 'Fred'
+
+      submit.dispatchEvent(event)
+      expect(document.querySelector('.employee-list').innerHTML).not.to.include('Fred')
+      addNewLiOnClick()
+      submit.dispatchEvent(event)
+      expect(document.querySelector('.employee-list').innerHTML).to.include('Fred')
     })
 
-    it('calls and returns the function as a callback, assigns this to be bob, and sets the array as arguments', function(){
-      let returnsThisWithArgs = function(firstArgument, secondArgument){
-        return [this].concat(firstArgument).concat(secondArgument)
-      }
-      expect(setThisWithApply(returnsThisWithArgs, bob, ['foo', 'bar'])[0]).to.equal(bob)
-      expect(setThisWithApply(returnsThisWithArgs, bob, ['foo', 'bar']).length).to.equal(3)
+    it('clears the input value', () => {
+      addNewLiOnClick()
+      expect(document.querySelector('input').value).to.equal('')
     })
   })
 
-  describe('returnNewFunctionOf', function(){
-    let fred;
-    let functionToBeCopied;
-
-    beforeEach(function(){
-      functionToBeCopied = function (){
-        return this
-      }
-     fred = { name: 'fred'}
-    })
-    it('returns a new function', function(){
-      expect(returnNewFunctionOf(functionToBeCopied)).to.not.equal(functionToBeCopied)
-      expect(typeof returnNewFunctionOf(functionToBeCopied)).to.equal("function")
-    })
-    it('sets the this argument to fred', function(){
-      let newFunction = returnNewFunctionOf(functionToBeCopied, fred)
-      expect(newFunction()).to.equal(fred)
+  describe('clearEmployeeListOnLinkClick', () => {
+    it('empties out the employee list when "Clear employee list" button clicked', () => {
+      let ul = document.querySelector('ul')
+      let button = document.querySelector('a')
+      let event = new MouseEvent('click', {
+        'view': window,
+        'bubbles': true,
+        'cancelable': true
+      });
+      clearEmployeeListOnLinkClick()
+      expect(ul.innerHTML).not.to.equal('')
+      button.dispatchEvent(event)
+      expect(ul.innerHTML).to.equal('')
     })
   })
 })
