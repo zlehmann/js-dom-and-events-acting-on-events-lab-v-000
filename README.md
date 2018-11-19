@@ -1,6 +1,8 @@
+# Acting On Events Lab
+
 ## Instructions
 
-In this lab, you will creating a form that adds Scuber employees. It also allows
+In this lab, you will create a form that adds Scuber employees. It also allows
 us to clear the list of employees upon a click to the "Clear Employee List"
 link. We will build up to this functionality with small functions, so read the
 tests carefully.
@@ -18,11 +20,8 @@ write your code in `index.js`. Write the following functions:
 
 - `addNewLiOnClick()`: This retrieves the employee information from the input.
 
-- `retrieveEmployeeInformation()`: This retrieves the employee information from
-  the input.
-
-- `retrieveEmployeeInformation()`: This retrieves the employee information from
-  the input.
+- `clearEmployeeListOnLinkClick()`: This empties out the employee list when
+  "Clear employee list" button clicked.
 
 Have fun, and good luck!
 
