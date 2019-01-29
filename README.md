@@ -18,7 +18,8 @@ write your code in `index.js`. Write the following functions:
   previous `retrieveEmployeeInformation` function and adds that string to a new
   list element which is appended to the `ul` with class "employee-list".
 
-- `addNewLiOnClick()`: This retrieves the employee information from the input.
+- `addNewLiOnClick()`: This adds the employee name as an li element on click and
+clears the input value.
 
 - `clearEmployeeListOnLinkClick()`: This empties out the employee list when
   "Clear employee list" button clicked.
