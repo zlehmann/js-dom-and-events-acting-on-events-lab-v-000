@@ -15,9 +15,9 @@ function addNewElementAsLi() {
 }
 
 function addNewLiOnClick() {
-  const main = document.getElementById('main');
+
   main.addEventListener('click'), function(e) {
     console.log('oh god');
-
+    
   });
 }
