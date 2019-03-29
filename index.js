@@ -21,5 +21,8 @@ function addNewLiOnClick() {
 }
 
 function clearEmployeeListOnLinkClick() {
-  const link = document.querySelector('.employee-list a');
+  const link = document.querySelector('a:firstChild');
+  link.addEventListener('click', function(e) {
+    document.querySelector('.employee-list').innerText = "";
+  });
 }
