@@ -19,3 +19,7 @@ function addNewLiOnClick() {
   button.addEventListener('click', addNewElementAsLi());
   document.querySelector('input').value = "";
 }
+
+function clearEmployeeListOnLinkClick() {
+  const link = document.querySelector('.employee-list a');
+}
