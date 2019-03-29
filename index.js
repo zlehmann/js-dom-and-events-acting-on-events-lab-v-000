@@ -13,3 +13,11 @@ function retrieveEmployeeInformation() {
 function addNewElementAsLi() {
   document.querySelector('.employee-list').append(retrieveEmployeeInformation());
 }
+
+const main = document.getElementById('main');
+function addNewLiOnClick() {
+  main.addEventListener('click'), function(e) {
+    addNewElementAsLi();
+    document.querySelector('input').value = "";
+  });
+}
