@@ -18,6 +18,6 @@ function addNewLiOnClick() {
 
   main.addEventListener('click'), function(e) {
     console.log('oh god');
-    
+
   });
 }
