@@ -18,6 +18,6 @@ const main = document.getElementById('main');
 function addNewLiOnClick() {
   main.addEventListener('click'), function(e) {
     addNewElementAsLi();
-    
+
   });
 }
